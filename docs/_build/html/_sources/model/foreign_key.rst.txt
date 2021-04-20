@@ -1,0 +1,6 @@
+simple_sql.foreign_key
+======================
+
+.. autoclass:: simple_sql.model.foreign_key.ForeignKey
+   :members:
+   :private-members:

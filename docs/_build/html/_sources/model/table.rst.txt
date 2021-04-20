@@ -1,0 +1,6 @@
+simple_sql.table
+================
+
+.. autoclass:: simple_sql.model.table.Table
+   :members:
+   :private-members:

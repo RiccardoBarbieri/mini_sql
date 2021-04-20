@@ -1,0 +1,6 @@
+simple_sql.column
+=================
+
+.. autoclass:: simple_sql.model.column.Column
+   :members:
+   :private-members:

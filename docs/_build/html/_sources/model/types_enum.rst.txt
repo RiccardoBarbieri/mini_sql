@@ -1,0 +1,6 @@
+simple_sql.types_enum
+=====================
+
+.. autoclass:: simple_sql.model.types_enum.TypesEnum
+   :members:
+   :private-members:
