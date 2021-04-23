@@ -1,33 +1,33 @@
 ************************
-simple_sql.model package
+mini_sql.model package
 ************************
 
-simple_sql.model.column
+mini_sql.model.column
 =======================
-.. autoclass:: simple_sql.model.column.Column
+.. autoclass:: mini_sql.model.column.Column
    :members:
    :private-members:
 
-simple_sql.model.foreign_key
+mini_sql.model.foreign_key
 ============================
-.. autoclass:: simple_sql.model.foreign_key.ForeignKey
+.. autoclass:: mini_sql.model.foreign_key.ForeignKey
    :members:
    :private-members:
 
-simple_sql.model.table
+mini_sql.model.table
 ======================
-.. autoclass:: simple_sql.model.table.Table
+.. autoclass:: mini_sql.model.table.Table
    :members:
    :private-members:
 
-simple_sql.model.type
+mini_sql.model.type
 =====================
-.. autoclass:: simple_sql.model.type.Type
+.. autoclass:: mini_sql.model.type.Type
    :members:
    :private-members:
 
-simple_sql.model.types_enum
+mini_sql.model.types_enum
 ===========================
-.. autoclass:: simple_sql.model.types_enum.TypesEnum
+.. autoclass:: mini_sql.model.types_enum.TypesEnum
    :members:
    :private-members:

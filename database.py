@@ -1,33 +1,29 @@
 from __future__ import annotations
 import sys
 import getpass
-if getpass.getuser() == 'ricca':
-    sys.path.append('C:\\Users\\ricca\\Desktop\\telegram')
-elif getpass.getuser() == 'grufoony':
-    sys.path.append('/home/grufoony/bot-telegram')
-elif getpass.getuser() == 'riccardoob':
-    sys.path.append('/home/riccardoob/telegram_bot')
+if getpass.getuser() == 'riccardoob':
+    sys.path.append('/home/riccardoob')
 elif getpass.getuser() == 'pi':
-    sys.path.append('/home/pi/telegram-bot')
+    sys.path.append('/home/pi')
 
 from mysql import connector
 from mysql.connector.connection import CursorBase, MySQLConnection
 from mysql.connector.errors import IntegrityError, ProgrammingError
 
-from simple_sql.metadata import MetaData
+from mini_sql.metadata import MetaData
 
-from simple_sql.exceptions import DatabaseNotSelected, NoSuchDatabase
+from mini_sql.exceptions import DatabaseNotSelected, NoSuchDatabase
 
-from simple_sql.model.table import Table
-from simple_sql.model.column import Column
-from simple_sql.model.types_enum import TypesEnum
-from simple_sql.model.type import Type
+from mini_sql.model.table import Table
+from mini_sql.model.column import Column
+from mini_sql.model.types_enum import TypesEnum
+from mini_sql.model.type import Type
 
-from simple_sql.wrappers.select_wrapper import SelectWrapper
-from simple_sql.wrappers.delete_wrapper import DeleteWrapper
-from simple_sql.wrappers.update_wrapper import UpdateWrapper
-from simple_sql.wrappers.drop_table_wrapper import DropTableWrapper
-from simple_sql.wrappers.insert_into_wrapper import InsertIntoWrapper
+from mini_sql.wrappers.select_wrapper import SelectWrapper
+from mini_sql.wrappers.delete_wrapper import DeleteWrapper
+from mini_sql.wrappers.update_wrapper import UpdateWrapper
+from mini_sql.wrappers.drop_table_wrapper import DropTableWrapper
+from mini_sql.wrappers.insert_into_wrapper import InsertIntoWrapper
 
 from typing import Dict, AnyStr, List
 
@@ -48,7 +44,7 @@ class Database():
     
     Note
     ----
-    The user must create a :class:`simple_sql.metadata.MetaData` object
+    The user must create a :class:`mini_sql.metadata.MetaData` object
     to pass to the instance but the class will take care of updating it.
 
     Parameters
@@ -332,9 +328,9 @@ class Database():
         
 
 
-# metadata = MetaData('./simple_sql/metadata_telegram.dump')
+# metadata = MetaData('./mini_sql/metadata_telegram.dump')
 
-# with open(Path('./simple_sql/creds.txt')) as f:
+# with open(Path('./mini_sql/creds.txt')) as f:
 #     temp = f.readlines()
 
 # db = Database(temp[0], 'root', temp[1], metadata)

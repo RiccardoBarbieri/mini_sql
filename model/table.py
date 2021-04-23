@@ -1,23 +1,19 @@
 from __future__ import annotations
 import sys
 import getpass
-if getpass.getuser() == 'ricca':
-    sys.path.append('C:\\Users\\ricca\\Desktop\\telegram')
-elif getpass.getuser() == 'grufoony':
-    sys.path.append('/home/grufoony/bot-telegram')
-elif getpass.getuser() == 'riccardoob':
-    sys.path.append('/home/riccardoob/telegram_bot')
+if getpass.getuser() == 'riccardoob':
+    sys.path.append('/home/riccardoob')
 elif getpass.getuser() == 'pi':
-    sys.path.append('/home/pi/telegram-bot')
+    sys.path.append('/home/pi')
 
 
-from simple_sql.exceptions import ZeroColumns, PrimaryKeyError, ForeignKeyError, NoSuchColumn
+from mini_sql.exceptions import ZeroColumns, PrimaryKeyError, ForeignKeyError, NoSuchColumn
 from typing import List, Dict, TYPE_CHECKING
 if TYPE_CHECKING:
-    from simple_sql.model.foreign_key import ForeignKey
-    from simple_sql.metadata import MetaData
-from simple_sql.model.column import Column
-from simple_sql.model.foreign_key import ForeignKey
+    from mini_sql.model.foreign_key import ForeignKey
+    from mini_sql.metadata import MetaData
+from mini_sql.model.column import Column
+from mini_sql.model.foreign_key import ForeignKey
 
 # TODO: update primary key constraint creator
 

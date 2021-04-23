@@ -1,25 +1,21 @@
 from __future__ import annotations
 import sys
 import getpass
-if getpass.getuser() == 'ricca':
-    sys.path.append('C:\\Users\\ricca\\Desktop\\telegram')
-elif getpass.getuser() == 'grufoony':
-    sys.path.append('/home/grufoony/bot-telegram')
-elif getpass.getuser() == 'riccardoob':
-    sys.path.append('/home/riccardoob/telegram_bot')
+if getpass.getuser() == 'riccardoob':
+    sys.path.append('/home/riccardoob')
 elif getpass.getuser() == 'pi':
-    sys.path.append('/home/pi/telegram-bot')
+    sys.path.append('/home/pi')
 
 from typing import TYPE_CHECKING, Dict
 
-from simple_sql.exceptions import NoSuchTable
+from mini_sql.exceptions import NoSuchTable
 
 from pathlib import Path
 from os.path import isfile
 import pickle
 
 if TYPE_CHECKING:
-    from simple_sql.model.table import Table
+    from mini_sql.model.table import Table
 
 class MetaData():
 
@@ -198,7 +194,7 @@ class MetaData():
     def __backup(self):
         """
         Private method that dumps (using pickle) the current state
-        of this :class:`simple_sql.metadata.MetaData` instance at the specified backup_path.
+        of this :class:`mini_sql.metadata.MetaData` instance at the specified backup_path.
         """
         with open(Path(self.__backup_path), 'wb+') as f:
             pickle.dump(self.__tables, f)

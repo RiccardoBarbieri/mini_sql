@@ -1,6 +1,6 @@
-simple_sql.column
+mini_sql.column
 =================
 
-.. autoclass:: simple_sql.model.column.Column
+.. autoclass:: mini_sql.model.column.Column
    :members:
    :private-members:

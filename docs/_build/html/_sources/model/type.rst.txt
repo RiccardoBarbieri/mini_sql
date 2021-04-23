@@ -1,6 +1,6 @@
-simple_sql.type
+mini_sql.type
 ===============
 
-.. autoclass:: simple_sql.model.type.Type
+.. autoclass:: mini_sql.model.type.Type
    :members:
    :private-members:

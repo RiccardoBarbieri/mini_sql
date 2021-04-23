@@ -749,7 +749,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ]
 Chapter 2.
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.type.Type' on page 3 und
+LaTeX Warning: Hyper reference `model:mini_sql.model.type.Type' on page 3 und
 efined on input line 141.
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
@@ -761,20 +761,20 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 229.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.type.Type' on page 3 und
+LaTeX Warning: Hyper reference `model:mini_sql.model.type.Type' on page 3 und
 efined on input line 233.
 
 [3]
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.type.Type' on page 4 und
+LaTeX Warning: Hyper reference `model:mini_sql.model.type.Type' on page 4 und
 efined on input line 317.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 4
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 4
  undefined on input line 326.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 4
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 4
  undefined on input line 333.
 
 [4]
@@ -784,103 +784,103 @@ tr\T1/ptm/m/n/10 ,
  []
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 5
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 5
  undefined on input line 420.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.table.Table' on page 5 u
+LaTeX Warning: Hyper reference `model:mini_sql.model.table.Table' on page 5 u
 ndefined on input line 435.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 5
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 5
  undefined on input line 450.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 5
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 5
  undefined on input line 547.
 
 [5]
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 6
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 6
  undefined on input line 563.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.table.Table' on page 6 u
+LaTeX Warning: Hyper reference `model:mini_sql.model.table.Table' on page 6 u
 ndefined on input line 596.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 6
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 6
  undefined on input line 613.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.table.Table' on page 6 u
+LaTeX Warning: Hyper reference `model:mini_sql.model.table.Table' on page 6 u
 ndefined on input line 617.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 6
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 6
  undefined on input line 621.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 6
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 6
  undefined on input line 655.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.foreign_key.ForeignKey' 
+LaTeX Warning: Hyper reference `model:mini_sql.model.foreign_key.ForeignKey' 
 on page 6 undefined on input line 685.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 6
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 6
  undefined on input line 715.
 
 [6]
 
-LaTeX Warning: Hyper reference `metadata:simple_sql.metadata.MetaData' on page 
+LaTeX Warning: Hyper reference `metadata:mini_sql.metadata.MetaData' on page 
 7 undefined on input line 730.
 
 
-LaTeX Warning: Hyper reference `metadata:simple_sql.metadata.MetaData' on page 
+LaTeX Warning: Hyper reference `metadata:mini_sql.metadata.MetaData' on page 
 7 undefined on input line 740.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 748.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 779.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 785.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 802.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 816.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 829.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.column.Column' on page 7
+LaTeX Warning: Hyper reference `model:mini_sql.model.column.Column' on page 7
  undefined on input line 836.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.foreign_key.ForeignKey' 
+LaTeX Warning: Hyper reference `model:mini_sql.model.foreign_key.ForeignKey' 
 on page 7 undefined on input line 861.
 
 
-LaTeX Warning: Hyper reference `model:simple_sql.model.foreign_key.ForeignKey' 
+LaTeX Warning: Hyper reference `model:mini_sql.model.foreign_key.ForeignKey' 
 on page 7 undefined on input line 868.
 
 [7] [8]
 Chapter 3.
 
-LaTeX Warning: Hyper reference `metadata:simple_sql.metadata.MetaData' on page 
+LaTeX Warning: Hyper reference `metadata:mini_sql.metadata.MetaData' on page 
 9 undefined on input line 907.
 
 [9

@@ -1,5 +1,5 @@
-simple_sql module
+mini_sql module
 =================
 
-.. autoclass:: simple_sql.database.Database
+.. autoclass:: mini_sql.database.Database
    :members:

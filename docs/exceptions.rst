@@ -1,43 +1,43 @@
 *****************************
-simple_sql.exceptions package
+mini_sql.exceptions package
 *****************************
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.ZeroColumns
+.. autoclass:: mini_sql.exceptions.ZeroColumns
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.ZeroTables
+.. autoclass:: mini_sql.exceptions.ZeroTables
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.SyntaxError
+.. autoclass:: mini_sql.exceptions.SyntaxError
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.PrimaryKeyError
+.. autoclass:: mini_sql.exceptions.PrimaryKeyError
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.ForeignKeyError
+.. autoclass:: mini_sql.exceptions.ForeignKeyError
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.NoSuchColumn
+.. autoclass:: mini_sql.exceptions.NoSuchColumn
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.WrongClauseOrder
+.. autoclass:: mini_sql.exceptions.WrongClauseOrder
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.NoSuchTable
+.. autoclass:: mini_sql.exceptions.NoSuchTable
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.NoSuchDatabase
+.. autoclass:: mini_sql.exceptions.NoSuchDatabase
 
-simple_sql.exceptions
+mini_sql.exceptions
 =====================
-.. autoclass:: simple_sql.exceptions.DatabaseNotSelected
+.. autoclass:: mini_sql.exceptions.DatabaseNotSelected

@@ -30,17 +30,17 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .in \\n[rst2man-indent\\n[rst2man-indent-level]]u
 ..
-.SH SIMPLE_SQL.METADATA PACKAGE
-.SS simple_sql.metadata
+.SH mini_sql.METADATA PACKAGE
+.SS mini_sql.metadata
 .INDENT 0.0
 .TP
-.B class simple_sql.metadata.MetaData(backup_path: str)
+.B class mini_sql.metadata.MetaData(backup_path: str)
 .UNINDENT
-.SH SIMPLE_SQL.MODEL PACKAGE
-.SS simple_sql.model.column
+.SH mini_sql.MODEL PACKAGE
+.SS mini_sql.model.column
 .INDENT 0.0
 .TP
-.B class simple_sql.model.column.Column(name: str, type: Type, primary_key: bool = False, unique: bool = False, nullable: bool = True, constraint: str = None, default: Any = None)
+.B class mini_sql.model.column.Column(name: str, type: Type, primary_key: bool = False, unique: bool = False, nullable: bool = True, constraint: str = None, default: Any = None)
 Describes a table column, the string form of this object is the
 string that declares a column with MySQL compliant syntax.
 .INDENT 7.0
@@ -187,7 +187,7 @@ Type
 .UNINDENT
 .INDENT 7.0
 .TP
-.B is_compatible(column: simple_sql.model.column.Column) -> bool
+.B is_compatible(column: mini_sql.model.column.Column) -> bool
 Defines the way in which two columns are compatible
 in terms of type.
 .INDENT 7.0
@@ -240,10 +240,10 @@ bool
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.model.foreign_key
+.SS mini_sql.model.foreign_key
 .INDENT 0.0
 .TP
-.B class simple_sql.model.foreign_key.ForeignKey(from_column: str, to_column: str, on_delete_cascade: bool = False)
+.B class mini_sql.model.foreign_key.ForeignKey(from_column: str, to_column: str, on_delete_cascade: bool = False)
 Describes a foreign key, the string form of this object is the
 string that declares a foreign key with MySQL compliant syntax.
 The table of the referencing column is not passed because it is
@@ -401,10 +401,10 @@ it is used primarly by the \fBTable\fP object when parsing the strings.
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.model.table
+.SS mini_sql.model.table
 .INDENT 0.0
 .TP
-.B class simple_sql.model.table.Table(metadata: MetaData, name: str, *columns_and_foreign: List, if_not_exists: bool = True)
+.B class mini_sql.model.table.Table(metadata: MetaData, name: str, *columns_and_foreign: List, if_not_exists: bool = True)
 Describes a table, the string form of this object is the
 string that declares a table with MySQL compliant syntax.
 Columns, references and primary keys are created using the
@@ -499,7 +499,7 @@ MetaData
 .UNINDENT
 .INDENT 7.0
 .TP
-.B contains(column: simple_sql.model.column.Column) -> bool
+.B contains(column: mini_sql.model.column.Column) -> bool
 Used to check that this table contains a certain column.
 .INDENT 7.0
 .TP
@@ -515,7 +515,7 @@ bool
 .UNINDENT
 .INDENT 7.0
 .TP
-.B get_column(column_name: str) -> simple_sql.model.column.Column
+.B get_column(column_name: str) -> mini_sql.model.column.Column
 Search and obtain a column in this table given its name.
 .INDENT 7.0
 .TP
@@ -534,7 +534,7 @@ Column
 .UNINDENT
 .INDENT 7.0
 .TP
-.B get_columns() -> List[simple_sql.model.column.Column]
+.B get_columns() -> List[mini_sql.model.column.Column]
 .INDENT 7.0
 .TP
 .B Returns
@@ -558,7 +558,7 @@ str
 .UNINDENT
 .INDENT 7.0
 .TP
-.B get_references() -> List[simple_sql.model.foreign_key.ForeignKey]
+.B get_references() -> List[mini_sql.model.foreign_key.ForeignKey]
 .INDENT 7.0
 .TP
 .B Returns
@@ -569,10 +569,10 @@ List[ForeignKey]
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.model.type
+.SS mini_sql.model.type
 .INDENT 0.0
 .TP
-.B class simple_sql.model.type.Type(type: TypesEnum, len: int = \- 1)
+.B class mini_sql.model.type.Type(type: TypesEnum, len: int = \- 1)
 Describes a MySQL type uaing a TypesEnum ad an integer for the length.
 This class is used when declaring columns.
 .INDENT 7.0
@@ -608,10 +608,10 @@ won’t be specified at declaration
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.model.types_enum
+.SS mini_sql.model.types_enum
 .INDENT 0.0
 .TP
-.B class simple_sql.model.types_enum.TypesEnum(value)
+.B class mini_sql.model.types_enum.TypesEnum(value)
 Enumerative object that contains all the possible types
 MySQL can offer. All the enumeratives are associated with
 a string that represents them in MySQL.
@@ -700,17 +700,17 @@ MULTIPOINT
 MULTIPOLYGON
 .UNINDENT
 .UNINDENT
-.SH SIMPLE_SQL.DATABASE PACKAGE
-.SS simple_sql.database
+.SH mini_sql.DATABASE PACKAGE
+.SS mini_sql.database
 .INDENT 0.0
 .TP
-.B class simple_sql.database.Database(host: str, user: str, password: str, metadata: simple_sql.metadata.MetaData)
+.B class mini_sql.database.Database(host: str, user: str, password: str, metadata: mini_sql.metadata.MetaData)
 .UNINDENT
-.SH SIMPLE_SQL.STATEMENTS PACKAGE
-.SS simple_sql.statements.delete
+.SH mini_sql.STATEMENTS PACKAGE
+.SS mini_sql.statements.delete
 .INDENT 0.0
 .TP
-.B class simple_sql.statements.delete.Delete(table: Table = None, where_clause: Dict[Column, Any] = None)
+.B class mini_sql.statements.delete.Delete(table: Table = None, where_clause: Dict[Column, Any] = None)
 This class represents a DELETE statement (MySQL compliant).
 Its string form is the syntax needed to execute a DELETE statement
 according to the table and where_clause specified. All the parameters
@@ -747,10 +747,10 @@ Dict[Column, Any]
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.statements.drop_table
+.SS mini_sql.statements.drop_table
 .INDENT 0.0
 .TP
-.B class simple_sql.statements.drop_table.DropTable(table: Table = None)
+.B class mini_sql.statements.drop_table.DropTable(table: Table = None)
 This class represents a DROP TABLE statement (MySQL compliant).
 Its string form is the syntax needed to execute a DROP TABLE statement
 according to the table. All the parameters are optional to enable
@@ -771,10 +771,10 @@ Table
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.statements.insert_into
+.SS mini_sql.statements.insert_into
 .INDENT 0.0
 .TP
-.B class simple_sql.statements.insert_into.InsertInto(table: Table = None, columns: List[Column] = None, values: List[Dict[Column, Any]] = None)
+.B class mini_sql.statements.insert_into.InsertInto(table: Table = None, columns: List[Column] = None, values: List[Dict[Column, Any]] = None)
 This class represents a INSERT INTO statement (MySQL compliant).
 Its string form is the syntax needed to execute a INSERT INTO statement
 according to the table. All the parameters are optional to enable
@@ -828,10 +828,10 @@ List[Dict[Column, Any]]
     specified or with the number of columns of the table).
 .UNINDENT
 .UNINDENT
-.SS simple_sql.statements.select
+.SS mini_sql.statements.select
 .INDENT 0.0
 .TP
-.B class simple_sql.statements.select.Select(select_clause: Dict[Table, List[Column]] = None, from_tables: List[Table] = None, where_clause: Dict[Table, Dict[Column, Any]] = None)
+.B class mini_sql.statements.select.Select(select_clause: Dict[Table, List[Column]] = None, from_tables: List[Table] = None, where_clause: Dict[Table, Dict[Column, Any]] = None)
 This class represents a SELECT statement (MySQL compliant).
 Its string form is the syntax needed to execute a SELECT statement
 according to the table. All the parameters are optional to enable
@@ -886,10 +886,10 @@ Dict[Table, Dict[Column, Any]]
     not exists in the table.
 .UNINDENT
 .UNINDENT
-.SS simple_sql.statements.update
+.SS mini_sql.statements.update
 .INDENT 0.0
 .TP
-.B class simple_sql.statements.update.Update(table: Table = None, set_clause: Dict[Column, Any] = None, where_clause: Dict[Column, Any] = None)
+.B class mini_sql.statements.update.Update(table: Table = None, set_clause: Dict[Column, Any] = None, where_clause: Dict[Column, Any] = None)
 This class represents a UPDATE statement (MySQL compliant).
 Its string form is the syntax needed to execute an UPDATE statement
 according to the table. All the parameters are optional to enable
@@ -938,11 +938,11 @@ Dict[Column, Any]
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SH SIMPLE_SQL.WRAPPERS PACKAGE
-.SS simple_sql.wrappers.delete_wrapper
+.SH mini_sql.WRAPPERS PACKAGE
+.SS mini_sql.wrappers.delete_wrapper
 .INDENT 0.0
 .TP
-.B class simple_sql.wrappers.delete_wrapper.DeleteWrapper(metadata: MetaData, table_str: AnyStr, where_clause_str: Dict[AnyStr, Any])
+.B class mini_sql.wrappers.delete_wrapper.DeleteWrapper(metadata: MetaData, table_str: AnyStr, where_clause_str: Dict[AnyStr, Any])
 This class uses the table name and the where clause as strings
 with the metadata object (handled by \fBDatabase\fP) to obtain
 the correct \fBTable\fP object and to create the where clause.
@@ -1013,7 +1013,7 @@ Dict[AnyStr, Any]
 .UNINDENT
 .INDENT 7.0
 .TP
-.B where(where_clause_str: Dict[AnyStr, Any]) -> simple_sql.wrappers.delete_wrapper.DeleteWrapper
+.B where(where_clause_str: Dict[AnyStr, Any]) -> mini_sql.wrappers.delete_wrapper.DeleteWrapper
 Used to specify the where clause.
 .INDENT 7.0
 .TP
@@ -1029,10 +1029,10 @@ DeleteWrapper
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.wrappers.drop_table_wrapper
+.SS mini_sql.wrappers.drop_table_wrapper
 .INDENT 0.0
 .TP
-.B class simple_sql.wrappers.drop_table_wrapper.DropTableWrapper(metadata: MetaData, table_str: AnyStr = None)
+.B class mini_sql.wrappers.drop_table_wrapper.DropTableWrapper(metadata: MetaData, table_str: AnyStr = None)
 This class uses the table name a string with the metadata object
 (handled by \fBDatabase\fP) to obtain the correct \fBTable\fP object.
 .INDENT 7.0
@@ -1076,10 +1076,10 @@ AnyStr
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.wrappers.insert_into_wrapper
+.SS mini_sql.wrappers.insert_into_wrapper
 .INDENT 0.0
 .TP
-.B class simple_sql.wrappers.insert_into_wrapper.InsertIntoWrapper(metadata: MetaData, table_str: AnyStr = None, columns_str: List[AnyStr] = None, values_str: List[Dict[AnyStr, Any]] = None)
+.B class mini_sql.wrappers.insert_into_wrapper.InsertIntoWrapper(metadata: MetaData, table_str: AnyStr = None, columns_str: List[AnyStr] = None, values_str: List[Dict[AnyStr, Any]] = None)
 This class uses the table name, the column list and values list
 as strings with the metadata object (handled by \fBDatabase\fP) to obtain
 the correct \fBTable\fP object and to create the column and values list as
@@ -1183,7 +1183,7 @@ List[Dict[AnyStr, Any]]
 .UNINDENT
 .INDENT 7.0
 .TP
-.B values(values_str: List[Dict[AnyStr, Any]]) -> simple_sql.wrappers.insert_into_wrapper.InsertIntoWrapper
+.B values(values_str: List[Dict[AnyStr, Any]]) -> mini_sql.wrappers.insert_into_wrapper.InsertIntoWrapper
 Used to specify the values to insert.
 .INDENT 7.0
 .TP
@@ -1200,10 +1200,10 @@ InsertIntoWrapper
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.wrappers.select_wrapper
+.SS mini_sql.wrappers.select_wrapper
 .INDENT 0.0
 .TP
-.B class simple_sql.wrappers.select_wrapper.SelectWrapper(metadata: MetaData, select_clause_str: List[AnyStr] = None, where_clause_str: Dict[AnyStr, Any] = None)
+.B class mini_sql.wrappers.select_wrapper.SelectWrapper(metadata: MetaData, select_clause_str: List[AnyStr] = None, where_clause_str: Dict[AnyStr, Any] = None)
 This class uses the table name, the select clause and where clause
 as strings with the metadata object (handled by \fBDatabase\fP) to obtain
 the correct \fBTable\fP object and to create the where and select clauses.
@@ -1259,7 +1259,7 @@ Dict[AnyStr, List[AnyStr]]
 .UNINDENT
 .INDENT 7.0
 .TP
-.B where(where_clause_str: Dict[AnyStr, Any]) -> simple_sql.wrappers.select_wrapper.SelectWrapper
+.B where(where_clause_str: Dict[AnyStr, Any]) -> mini_sql.wrappers.select_wrapper.SelectWrapper
 Used to specify the where clause.
 .INDENT 7.0
 .TP
@@ -1278,10 +1278,10 @@ SelectWrapper
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SS simple_sql.wrappers.update_wrapper
+.SS mini_sql.wrappers.update_wrapper
 .INDENT 0.0
 .TP
-.B class simple_sql.wrappers.update_wrapper.UpdateWrapper(metadata: MetaData, table_str: AnyStr = None, set_clause_str: Dict[AnyStr, Any] = None, where_clause_str: Dict[AnyStr, Any] = None)
+.B class mini_sql.wrappers.update_wrapper.UpdateWrapper(metadata: MetaData, table_str: AnyStr = None, set_clause_str: Dict[AnyStr, Any] = None, where_clause_str: Dict[AnyStr, Any] = None)
 This class uses the table name, the set clause and where clause
 as strings with the metadata object (handled by \fBDatabase\fP) to obtain
 the correct \fBTable\fP object and to create the where and set clauses.
@@ -1381,7 +1381,7 @@ Dict[AnyStr, Str], optional
 .UNINDENT
 .INDENT 7.0
 .TP
-.B set(set_clause_str: Dict[AnyStr, Any]) -> simple_sql.wrappers.update_wrapper.UpdateWrapper
+.B set(set_clause_str: Dict[AnyStr, Any]) -> mini_sql.wrappers.update_wrapper.UpdateWrapper
 Used to specify the set clause.
 .INDENT 7.0
 .TP
@@ -1399,7 +1399,7 @@ UpdateWrapper
 .UNINDENT
 .INDENT 7.0
 .TP
-.B where(where_clause_str: Dict[AnyStr, Any]) -> simple_sql.wrappers.update_wrapper.UpdateWrapper
+.B where(where_clause_str: Dict[AnyStr, Any]) -> mini_sql.wrappers.update_wrapper.UpdateWrapper
 Used to specify the where clause.
 .INDENT 7.0
 .TP

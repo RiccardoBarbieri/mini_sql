@@ -1,9 +1,9 @@
 ***************************
-simple_sql.metadata package
+mini_sql.metadata package
 ***************************
 
-simple_sql.metadata
+mini_sql.metadata
 ===================
-.. autoclass:: simple_sql.metadata.MetaData
+.. autoclass:: mini_sql.metadata.MetaData
    :members:
    :private-members:

@@ -1,22 +1,18 @@
 from __future__ import annotations
 import sys
 import getpass
-if getpass.getuser() == 'ricca':
-    sys.path.append('C:\\Users\\ricca\\Desktop\\telegram')
-elif getpass.getuser() == 'grufoony':
-    sys.path.append('/home/grufoony/bot-telegram')
-elif getpass.getuser() == 'riccardoob':
-    sys.path.append('/home/riccardoob/telegram_bot')
+if getpass.getuser() == 'riccardoob':
+    sys.path.append('/home/riccardoob')
 elif getpass.getuser() == 'pi':
-    sys.path.append('/home/pi/telegram-bot')
+    sys.path.append('/home/pi')
 
 from typing import TYPE_CHECKING, Any, Dict, AnyStr
 
-from simple_sql.exceptions import ZeroTables, ZeroColumns
+from mini_sql.exceptions import ZeroTables, ZeroColumns
 
 if TYPE_CHECKING:
-    from simple_sql.model.column import Column
-    from simple_sql.model.table import Table
+    from mini_sql.model.column import Column
+    from mini_sql.model.table import Table
 
 
 class Update():
