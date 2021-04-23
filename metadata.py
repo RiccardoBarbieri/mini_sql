@@ -94,6 +94,18 @@ class MetaData():
         except KeyError:
             raise NoSuchTable('Table {table} does not exists'.format(table = name))
         return temp
+
+    def get_tables(self) -> Dict[str, Table]:
+        """
+        Convenience method to obtain the __tables attribute for
+        primarly for backup restore.
+
+        Returns
+        -------
+        Dict[str, Table]
+            The mapping of names and relative tables.
+        """
+        return self.__tables
     
     def add_table(self, table: Table):
         """
