@@ -8,7 +8,7 @@ elif getpass.getuser() == 'pi':
 
 from mysql import connector
 from mysql.connector.connection import CursorBase, MySQLConnection
-from mysql.connector.errors import IntegrityError, ProgrammingError
+from mysql.connector.errors import ProgrammingError, Error
 
 from mini_sql.metadata import MetaData
 
@@ -105,23 +105,23 @@ class Database():
         NoSuchDatabase
             If the requested database does not exists.
         """
-        try:
+        if database not in self.get_databases():
+            raise NoSuchDatabase('Database {db} not selected, try Database.get_databases() to print all available databases'.format(db = database))
+        else:
             self.__cursor.execute('USE {database};'.format(database = database))
             self.__metadata.update_current_database(database)
             self.__connection.commit()
-        except ProgrammingError as e:
-            if e.errno == 1049:
-                raise NoSuchDatabase('Database {db} not selected, try Database.get_databases() to print all available databases'.format(db = database))
-        
-    def get_databases(self, print_them: bool = True) -> List[str]:
+
+
+    def get_databases(self, print_them: bool = False) -> List[str]:
         """
         Use this method to see which databases are available.
-        To disable the log print of the list pass False as print_them
+        To enable the log print of the list pass True as print_them
         parameter.
 
         Parameters
         ----------
-        print_them: bool, default True
+        print_them: bool, default False
             True if the function should print the list.
 
         Returns
@@ -134,6 +134,8 @@ class Database():
         databases = []
         for i in fetch:
             databases.append(i[0])
+        if print_them:
+            print(databases)
         return databases
 
     def create_table(self, table: Table):
@@ -237,8 +239,9 @@ class Database():
             A :class:`DropTableWrapper` instance with the current metadata
             instance and the provided table name.
         """
+        wrapper = DropTableWrapper(self.__metadata, table)
         self.__metadata.remove_table(table)
-        return DropTableWrapper(self.__metadata, table)
+        return wrapper
 
     def delete(self, table: str) -> DeleteWrapper:
         """
@@ -287,6 +290,16 @@ class Database():
             result = self.__create_dictionary(self.__cursor.fetchall(), query.get_elements())
         elif 'ALTER' in str(query):
             print('Feature not yet implemented')
+        elif 'DESCRIBE' in str(query):
+            parts = query.split('DESCRIBE')
+            name_dirty = ''
+            for i in parts:
+                if ';' in i:
+                    name_dirty = i
+            name = name_dirty.strip(' ;')
+            elements = {name: ['Field', 'Type', 'Null', 'Key', 'Default', 'Extra']}
+            self.__cursor.execute(str(query))
+            result = self.__create_dictionary(self.__cursor.fetchall(), elements)
         else:
             self.__cursor.execute(str(query))
             result = self.__cursor.fetchall()

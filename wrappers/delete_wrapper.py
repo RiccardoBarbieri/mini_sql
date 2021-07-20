@@ -27,11 +27,11 @@ class DeleteWrapper():
 
     Parameters
     ----------
-    metadata: MetaData, optional
+    metadata: MetaData
         The ``MetaData`` instance of the database.
-    table_str: AnyStr, optional
+    table_str: AnyStr
         The name of the table to delete from.
-    where_clause_str: Dict[AnyStr, Any], optional
+    where_clause_str: Dict[AnyStr, Any]
         The where clause to restrict which entries to delete.
 
     Attributes

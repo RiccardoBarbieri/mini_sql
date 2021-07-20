@@ -60,9 +60,13 @@ class MetaData():
     def __init__(self, backup_path: str):
         self.__backup_path = backup_path
         if isfile(Path(self.__backup_path)):
+            # try:
             old = self.__restore_backup()
-            self.__tables = old.__tables
-            self.__current_database = old.__current_database
+            self.__tables = old.get_tables()
+            self.__current_database = old.get_current_database()
+            # except AttributeError:
+            #     self.__tables = {}
+            #     self.__current_database = ''
         else:
             self.__tables = {}
 
@@ -85,10 +89,10 @@ class MetaData():
         Table
             The table that has the requested name.
         """
-        try:
-            temp = self.__tables[name]
-        except KeyError:
+        if name not in self.__tables.keys():
             raise NoSuchTable('Table {table} does not exists'.format(table = name))
+        else:
+            temp = self.__tables[name]
         return temp
 
     def get_tables(self) -> Dict[str, Table]:
@@ -136,10 +140,10 @@ class MetaData():
             If the table name passed does not exists in this
             ``MetaData`` instance.
         """
-        try:
-            self.__tables.pop(table)
-        except KeyError:
+        if table not in self.__tables.keys():
             raise NoSuchTable('Table {table} does not exists'.format(table = table))
+        else:
+            self.__tables.pop(table)
         self.__backup()
 
     def update_table(self, table: Table):
@@ -197,7 +201,7 @@ class MetaData():
         of this :class:`mini_sql.metadata.MetaData` instance at the specified backup_path.
         """
         with open(Path(self.__backup_path), 'wb+') as f:
-            pickle.dump(self.__tables, f)
+            pickle.dump(self, f)
 
     def __restore_backup(self) -> MetaData:
         """
