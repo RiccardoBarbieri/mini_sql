@@ -173,6 +173,8 @@ class Table():
     def get_column(self, column_name: str) -> Column:
         """
         Search and obtain a column in this table given its name.
+        A column is matched even considering the backticks (for reserved
+        words override) in case they are present.
 
         Parameters
         ----------
@@ -190,7 +192,7 @@ class Table():
             If there is no column named ``column_name``.
         """
         for i in self.__columns:
-            if i.get_name() == column_name:
+            if i.get_name() == column_name or i.get_name() == '`' + column_name + '`':
                 return i
         raise NoSuchColumn('Column {col} for table {table} does not exists'.format(col = column_name, table = self.__name))
 

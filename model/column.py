@@ -1,6 +1,7 @@
 from __future__ import annotations
 import sys
 import getpass
+import pathlib
 if getpass.getuser() == 'riccardoob':
     sys.path.append('/home/riccardoob')
 elif getpass.getuser() == 'pi':
@@ -86,22 +87,37 @@ class Column():
 
     def __str__(self) -> str:
         """
-        Creates the MySQL compliant string to declare the column.
+        Creates the MySQL compliant string to declare the column. All "%n" tags
+        in constraint strings are substituted with the name of the column.
+        If the name is a MySQL reserved word then it is automatically wrapped in
+        backquotes.
 
         Returns
         -------
         str
             MySQL compliant string declaration of the column.
         """
-        string = self.__name
+        safe_name = self.__name
+        reserved_words = pathlib.Path(__file__).parent.parent.joinpath('reserved_words')
+        with open(reserved_words, 'r') as f:
+            l = f.read().splitlines()
+            if safe_name.upper() in l:
+                safe_name = '`' + safe_name + '`'
+        #temporary
+        self.__name = safe_name
+
+        string = safe_name
         string += ' ' + str(self.__type)
         # string += ' PRIMARY KEY' if self.__primary_key else ''
         string += ' UNIQUE' if self.__unique else ''
         string += '' if self.__nullable else ' NOT NULL'
-        string += ' ' + str(self.__constraint) if self.__constraint else ''
+        string += ' ' + str(self.__constraint.replace('%n', safe_name)) if self.__constraint else ''
         if self.__default:
             if type(self.__default) is str:
-                string += ' DEFAULT "' + self.__default + '"'
+                if 'TIMESTAMP' not in self.__default:
+                    string += ' DEFAULT "' + self.__default + '"'
+                else:
+                    string += ' DEFAULT ' + self.__default
             else:
                 string += ' DEFAULT ' + str(self.__default)
         return string
@@ -143,7 +159,8 @@ class Column():
 
     def get_name(self) -> str:
         """
-        Returns
+        Returns the name of the column, if the name is a MySQL reserved
+        word the name is returned wrapped in backticks.
         -------
         str
             The name of the column.
