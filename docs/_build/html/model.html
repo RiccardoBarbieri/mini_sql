@@ -330,7 +330,9 @@ is passed the DEFAULT clause won’t be used.</p></li>
 <dl class="py method">
 <dt id="mini_sql.model.column.Column.get_name">
 <code class="sig-name descname"><span class="pre">get_name</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#mini_sql.model.column.Column.get_name" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Returns the name of the column, if the name is a MySQL reserved
+word the name is returned wrapped in backticks.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The name of the column.</p>
 </dd>
@@ -699,7 +701,9 @@ here</p>
 <dl class="py method">
 <dt id="mini_sql.model.table.Table.get_column">
 <code class="sig-name descname"><span class="pre">get_column</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#mini_sql.model.column.Column" title="mini_sql.model.column.Column"><span class="pre">mini_sql.model.column.Column</span></a><a class="headerlink" href="#mini_sql.model.table.Table.get_column" title="Permalink to this definition">¶</a></dt>
-<dd><p>Search and obtain a column in this table given its name.</p>
+<dd><p>Search and obtain a column in this table given its name.
+A column is matched even considering the backticks (for reserved
+words override) in case they are present.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>column_name</strong> (<em>str</em>) – The name of the column to search.</p>

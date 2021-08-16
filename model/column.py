@@ -161,6 +161,8 @@ class Column():
         """
         Returns the name of the column, if the name is a MySQL reserved
         word the name is returned wrapped in backticks.
+
+        Returns
         -------
         str
             The name of the column.

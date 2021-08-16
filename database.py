@@ -90,6 +90,13 @@ class Database():
 
         self.__cursor = self.__connection.cursor()
 
+    def get_metadata(self) -> MetaData:
+        """
+        Method to obtain the metadata object relative to
+        this database.
+        """
+        return self.__metadata
+
     def select_database(self, database: str):
         """
         Use this method to select the working database.
