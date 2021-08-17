@@ -18,7 +18,7 @@ sys.setrecursionlimit(1500)
 import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
-project = 'simple-sql'
+project = 'mini_sql'
 copyright = '2021, Riccardo Barbieri'
 author = 'Riccardo Barbieri'
 
