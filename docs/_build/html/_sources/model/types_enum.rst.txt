@@ -1,6 +1,0 @@
-mini_sql.types_enum
-=====================
-
-.. autoclass:: mini_sql.model.types_enum.TypesEnum
-   :members:
-   :private-members:

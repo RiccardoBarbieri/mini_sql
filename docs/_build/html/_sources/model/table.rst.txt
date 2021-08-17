@@ -1,6 +1,0 @@
-mini_sql.table
-================
-
-.. autoclass:: mini_sql.model.table.Table
-   :members:
-   :private-members:

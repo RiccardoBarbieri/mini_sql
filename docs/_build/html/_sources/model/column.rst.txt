@@ -1,6 +1,0 @@
-mini_sql.column
-=================
-
-.. autoclass:: mini_sql.model.column.Column
-   :members:
-   :private-members:

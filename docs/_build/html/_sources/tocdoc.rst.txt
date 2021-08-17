@@ -1,5 +1,0 @@
-mini_sql module
-=================
-
-.. autoclass:: mini_sql.database.Database
-   :members:

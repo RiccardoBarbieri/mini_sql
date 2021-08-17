@@ -1,6 +1,0 @@
-mini_sql.foreign_key
-======================
-
-.. autoclass:: mini_sql.model.foreign_key.ForeignKey
-   :members:
-   :private-members:
