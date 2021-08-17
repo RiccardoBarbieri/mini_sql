@@ -1,4 +1,4 @@
-Welcome to simple-sql's documentation!
+Welcome to mini-sql's documentation!
 ======================================
 
 

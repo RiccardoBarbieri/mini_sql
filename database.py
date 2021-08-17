@@ -92,7 +92,7 @@ class Database():
 
     def get_metadata(self) -> MetaData:
         """
-        Method to obtain the metadata object relative to
+        Method to obtain the :class:`mini_sql.metadata.MetaData` metadata object relative to
         this database.
         """
         return self.__metadata
