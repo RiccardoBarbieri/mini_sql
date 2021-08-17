@@ -4,11 +4,3 @@ requires = [
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
-
-[metadata]
-name = mini_sql
-version = 0.0.1
-description = mysql-python orm
-
-[options]
-packages = find:
